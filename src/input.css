@@ -1,1 +1,117 @@
 @import "tailwindcss";
+
+/* ============================================
+   UNIFAB — Custom Design Layer
+   Applied on top of Tailwind CSS v4
+   ============================================ */
+
+/* ---- Typography ---- */
+.unifab-body {
+    font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-heading,
+h1, h2, h3 {
+    font-family: 'Syne', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---- Logo ---- */
+.logo-text {
+    font-family: 'Syne', ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* ---- Hero background subtle dot grid ---- */
+.hero-bg-grid {
+    background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.45;
+}
+
+/* ---- Stat number font ---- */
+.stat-number {
+    font-family: 'Syne', ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.03em;
+}
+
+/* ---- Step numbers ---- */
+.step-num {
+    font-family: 'Syne', ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.05em;
+}
+
+/* ---- Service card icon centering ---- */
+.card-icon {
+    font-style: normal;
+    line-height: 1;
+}
+
+/* ---- Smooth scrolling ---- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---- File input custom styling ---- */
+input[type="file"]::file-selector-button {
+    font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---- Focus ring global override ---- */
+*:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+/* ---- Animate pulse for live indicator ---- */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ---- Subtle entrance animation for hero ---- */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.eyebrow {
+    animation: fadeSlideUp 0.5s ease-out both;
+    animation-delay: 0.05s;
+}
+
+.hero-heading {
+    animation: fadeSlideUp 0.5s ease-out both;
+    animation-delay: 0.15s;
+}
+
+.hero-text p {
+    animation: fadeSlideUp 0.5s ease-out both;
+    animation-delay: 0.25s;
+}
+
+.hero-cta-group {
+    animation: fadeSlideUp 0.5s ease-out both;
+    animation-delay: 0.35s;
+}
+
+.trust-row {
+    animation: fadeSlideUp 0.5s ease-out both;
+    animation-delay: 0.45s;
+}
+
+.quote-widget {
+    animation: fadeSlideUp 0.6s ease-out both;
+    animation-delay: 0.2s;
+}

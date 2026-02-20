@@ -3,76 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
     <title>UniFab | Create Account</title>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-main">
-            <div class="logo">
-                <a href="../index.html">UniFab</a>
+    <header class="site-header border-b border-gray-100 bg-white">
+        <div class="header-main max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <div class="logo flex-shrink-0">
+                <a href="../index.html" class="logo-link flex items-center gap-2">
+                    <span class="logo-icon w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">UF</span>
+                    <span class="text-xl font-bold text-gray-900 tracking-tight logo-text">UniFab</span>
+                </a>
             </div>
-            <p>Already have an account? <a href="./login.html">Log in</a></p>
+            <p class="login-hint text-center text-sm text-gray-500">Already have an account? <a href="./login.html" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">Log in</a></p>
         </div>
     </header>
 
     <main>
-        <section class="register-section">
-            <div class="register-container">
+        <section class="register-section min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12">
+            <div class="register-container bg-white rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 p-8 w-full max-w-md">
 
-                <div class="form-header">
-                    <span class="logo-icon">UF</span>
-                    <h1>Create Your Account</h1>
-                    <p>Join the USTP-CDO Fabrication Laboratory platform.</p>
+                <div class="form-header text-center mb-8">
+                    <span class="logo-icon w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-sm mx-auto mb-4">UF</span>
+                    <h1 class="text-2xl font-extrabold text-gray-900 tracking-tight mb-1">Create Your Account</h1>
+                    <p class="text-sm text-gray-500">Join the USTP-CDO Fabrication Laboratory platform.</p>
                 </div>
 
                 <form action="/register" method="POST" class="register-form">
 
-                    <div class="form-row">
-                        <div class="field-group">
-                            <label for="first-name">First Name</label>
-                            <input type="text" id="first-name" name="first_name" placeholder="Juan" required>
+                    <div class="form-row grid grid-cols-2 gap-4">
+                        <div class="field-group flex flex-col gap-1.5 mb-5">
+                            <label for="first-name" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">First Name</label>
+                            <input type="text" id="first-name" name="first_name" placeholder="Juan" required
+                                class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 transition-colors duration-200">
                         </div>
-                        <div class="field-group">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" id="last-name" name="last_name" placeholder="Dela Cruz" required>
+                        <div class="field-group flex flex-col gap-1.5 mb-5">
+                            <label for="last-name" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Last Name</label>
+                            <input type="text" id="last-name" name="last_name" placeholder="Dela Cruz" required
+                                class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 transition-colors duration-200">
                         </div>
                     </div>
 
-                    <div class="field-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="juan.delacruz@ustp.edu.ph" required>
+                    <div class="field-group flex flex-col gap-1.5 mb-5">
+                        <label for="email" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="juan.delacruz@ustp.edu.ph" required
+                            class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 transition-colors duration-200">
                     </div>
 
-                    <div class="field-group">
-                        <label for="role">I am a...</label>
-                        <select id="role" name="role" required>
+                    <div class="field-group flex flex-col gap-1.5 mb-5">
+                        <label for="role" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">I am a...</label>
+                        <select id="role" name="role" required
+                            class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 transition-colors duration-200">
                             <option value="">Select Role</option>
                             <option value="student">Student</option>
                             <option value="researcher">Researcher</option>
                             <option value="faculty">Faculty</option>
-                            <option value="faculty">Other</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
 
-                    <div class="field-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Min. 8 characters" required>
+                    <div class="field-group flex flex-col gap-1.5 mb-5">
+                        <label for="password" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Min. 8 characters" required
+                            class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 transition-colors duration-200">
                     </div>
 
-                    <div class="field-group">
-                        <label for="confirm-password">Confirm Password</label>
-                        <input type="password" id="confirm-password" name="confirm_password" placeholder="Re-enter your password" required>
+                    <div class="field-group flex flex-col gap-1.5 mb-5">
+                        <label for="confirm-password" class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm_password" placeholder="Re-enter your password" required
+                            class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 transition-colors duration-200">
                     </div>
 
-                    <div class="terms-row">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms">I agree to the <a href="/terms">Terms of Service</a></label>
+                    <div class="terms-row flex items-start gap-3 my-5">
+                        <input type="checkbox" id="terms" name="terms" required
+                            class="w-4 h-4 accent-blue-600 cursor-pointer flex-shrink-0">
+                        <label for="terms" class="text-xs text-gray-500">I agree to the <a href="/terms" class="text-blue-600 hover:text-blue-700 font-semibold transition-colors">Terms of Service</a></label>
                     </div>
 
                     <div class="form-footer">
-                        <button type="submit">Create Account</button>
-                        <p class="login-hint">Already have an account? <a href="./login.html">Log in</a></p>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-sm py-3 rounded-xl shadow-md shadow-blue-200 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg mt-2">Create Account</button>
+                        <p class="login-hint text-center text-sm text-gray-500 mt-6">Already have an account? <a href="./login.html" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">Log in</a></p>
                     </div>
 
                 </form>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./main.css" rel="stylesheet">
+    <title>UniFab | Professional 3D Printing Service</title>
+    </head>
+<body class="bg-white">
+
+    <header class="site-header sticky top-0 z-50 bg-white shadow-sm">
+        <div class="header-main max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="logo flex-shrink-0">
+                <a href="/" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition">UniFab</a>
+            </div>
+            
+            <nav class="hidden md:flex items-center flex-1 ml-12">
+                <ul class="flex gap-8">
+                    <li><a href="#capabilities" class="text-gray-700 hover:text-blue-600 transition font-medium">Services</a></li>
+                    <li><a href="/database" class="text-gray-700 hover:text-blue-600 transition font-medium">Design Database</a></li>
+                    <li><a href="/request-designer" class="text-gray-700 hover:text-blue-600 transition font-medium">Request Designer</a></li>
+                    <li><a href="/tracking" class="text-gray-700 hover:text-blue-600 transition font-medium">Track Order</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-actions flex gap-4 ml-auto">
+                <a href="/login" class="text-gray-700 hover:text-blue-600 transition font-medium py-2 px-4">Log In</a>
+                <a href="/register" class="bg-blue-600 text-white hover:bg-blue-700 transition font-medium py-2 px-6 rounded-lg shadow-sm">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="bg-white">
+        <section id="hero" class="hero-section bg-gradient-to-br from-blue-50 to-white py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="hero-text">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">Professional 3D Printing & Prototyping Services</h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">Streamlined fabrication for USTP students and researchers. Get instant cost estimates and automated design checks.</p>
+                </div>
+
+            <div class="quote-widget bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                <div class="widget-header flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900">Instant Quote</h2>
+                    <span class="badge bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Online 24/7</span>
+                </div>
+
+                <form action="/quote" method="POST" enctype="multipart/form-data" class="space-y-6">
+                    <div class="upload-area bg-blue-50 border-2 border-dashed border-blue-300 rounded-lg p-6">
+                        <label for="stl-file" class="block text-gray-900 font-semibold mb-2">Upload 3D Files</label>
+                        <input type="file" id="stl-file" name="file" accept=".stl, .obj, .step" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <small class="block text-gray-600 mt-2">Support: STL, OBJ, STEP</small>
+                    </div>
+
+                    <div class="quick-specs-grid grid grid-cols-2 gap-4">
+                        
+                        <div class="spec-group">
+                            <label for="material" class="block text-gray-900 font-semibold mb-2">Material</label>
+                            <select id="material" name="material" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                <option value="pla">PLA (Standard)</option>
+                                <option value="abs">ABS (Durable)</option>
+                                <option value="petg">PETG (Flexible)</option>
+                            </select>
+                        </div>
+
+                        <div class="spec-group">
+                            <label for="quality" class="block text-gray-900 font-semibold mb-2">Quality (Layer Height)</label>
+                            <select id="quality" name="quality" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                <option value="0.2">Standard (0.2mm)</option>
+                                <option value="0.1">High Detail (0.1mm)</option>
+                                <option value="0.3">Draft (0.3mm)</option>
+                            </select>
+                        </div>
+
+                        <div class="spec-group">
+                            <label for="infill" class="block text-gray-900 font-semibold mb-2">Infill</label>
+                            <select id="infill" name="infill" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                                <option value="20">20% (Standard)</option>
+                                <option value="100">100% (Solid)</option>
+                                <option value="10">10% (Hollow)</option>
+                            </select>
+                        </div>
+
+                        <div class="spec-group">
+                            <label for="quantity" class="block text-gray-900 font-semibold mb-2">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" value="1" min="1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+
+                    <div class="widget-footer">
+                        <button type="submit" class="w-full bg-blue-600 text-white hover:bg-blue-700 transition font-semibold py-3 px-6 rounded-lg shadow-md">Get Instant Estimate</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </section>
+
+        <section id="capabilities" class="stats-banner bg-gradient-to-r from-blue-600 to-blue-800 py-16">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="stat-item">
+                        <span class="stat-number block text-5xl font-bold text-white mb-2">24h</span>
+                        <span class="stat-label text-blue-100">Turnaround Time</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number block text-5xl font-bold text-white mb-2">500+</span>
+                        <span class="stat-label text-blue-100">Approved Designs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number block text-5xl font-bold text-white mb-2">100%</span>
+                        <span class="stat-label text-blue-100">Design Check</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services-grid" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+            <div class="section-header text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Comprehensive fabrication solutions for every stage of your project.</p>
+            </div>
+
+            <div class="card-grid grid md:grid-cols-3 gap-8">
+                
+                <article class="service-card bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg hover:border-blue-300 transition">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">3D Printing Service</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Upload your STL files and get professional prints. We handle the slicing and post-processing.</p>
+                    <a href="/upload" class="text-blue-600 font-semibold hover:text-blue-700 transition inline-flex items-center">Start Printing <span class="ml-2">→</span></a>
+                </article>
+
+                <article class="service-card bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg hover:border-blue-300 transition">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Design Database</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Don't have a design? Browse our curated library of verified, printable 3D models.</p>
+                    <a href="/database" class="text-blue-600 font-semibold hover:text-blue-700 transition inline-flex items-center">Browse Library <span class="ml-2">→</span></a>
+                </article>
+
+                <article class="service-card bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg hover:border-blue-300 transition">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Request Design Help</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Need a custom part? Submit a request to our designers including sketches and dimensions.</p>
+                    <a href="/request-designer" class="text-blue-600 font-semibold hover:text-blue-700 transition inline-flex items-center">Hire a Designer <span class="ml-2">→</span></a>
+                </article>
+
+            </div>
+            </div>
+        </section>
+
+        <section id="process-flow" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-gray-900 mb-16 text-center">How It Works</h2>
+            <ol class="steps-container grid md:grid-cols-4 gap-6">
+                <li class="step bg-white rounded-xl p-8 border border-gray-200">
+                    <span class="step-num block text-5xl font-bold text-blue-600 mb-4">01</span>
+                    <strong class="block text-xl font-bold text-gray-900 mb-2">Upload / Select</strong>
+                    <p class="text-gray-600">Upload your file or choose from our database.</p>
+                </li>
+                <li class="step bg-white rounded-xl p-8 border border-gray-200">
+                    <span class="step-num block text-5xl font-bold text-blue-600 mb-4">02</span>
+                    <strong class="block text-xl font-bold text-gray-900 mb-2">Review & Quote</strong>
+                    <p class="text-gray-600">Get instant pricing. Admins review for printability.</p>
+                </li>
+                <li class="step bg-white rounded-xl p-8 border border-gray-200">
+                    <span class="step-num block text-5xl font-bold text-blue-600 mb-4">03</span>
+                    <strong class="block text-xl font-bold text-gray-900 mb-2">Fabrication</strong>
+                    <p class="text-gray-600">We print your object using high-quality materials.</p>
+                </li>
+                <li class="step bg-white rounded-xl p-8 border border-gray-200">
+                    <span class="step-num block text-5xl font-bold text-blue-600 mb-4">04</span>
+                    <strong class="block text-xl font-bold text-gray-900 mb-2">Pickup</strong>
+                    <p class="text-gray-600">Track your status and pick up at the USTP Lab.</p>
+                </li>
+            </ol>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="footer-content max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-bold mb-4">UniFab</h3>
+                    <p class="text-gray-400">Professional 3D printing and prototyping services for students and researchers.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#capabilities">Services</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <address class="text-gray-400 not-italic">
+                        Cagayan de Oro City, Philippines<br>
+                        <a href="mailto:fablab@ustp.edu.ph" class="hover:text-white transition">fablab@ustp.edu.ph</a>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-center text-gray-400">&copy; 2024 USTP-CDO Fabrication Laboratory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

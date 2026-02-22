@@ -1,0 +1,222 @@
+import {Link, NavLink} from "react-router-dom";
+import Footer from "../components/layout/Footer";
+
+export default function Home() {
+    return (
+        <>
+        <main className="bg-white">
+            <section id="hero" className="hero-section relative overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32">
+                <div className="hero-bg-grid absolute inset-0 -z-10"></div>
+                <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+                <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-indigo-100 rounded-full blur-3xl opacity-40 -z-10"></div>
+
+                <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                    <div className="hero-text">
+                        <div className="eyebrow inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 tracking-widest uppercase">
+                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></span>
+                            USTP–CDO Fabrication Laboratory
+                        </div>
+
+                        <h1 className="hero-heading text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-none tracking-tight">
+                            Professional<br />
+                            <span className="text-blue-600">3D Printing</span><br />
+                            &amp; Prototyping
+                        </h1>
+                    
+                        <p className="text-lg text-gray-500 mb-10 leading-relaxed max-w-md font-light">
+                            Streamlined fabrication for USTP students and researchers. Upload your design, get an instant quote, and track your order in real time.
+                        </p>
+
+                        <div className="hero-cta-group flex flex-wrap gap-4">
+                            <Link to="#quote" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg shadow-blue-200 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-200 text-sm">
+                                Get Instant Quote
+                            </Link>
+                            <Link to="/database" className="bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 font-semibold py-3.5 px-8 rounded-xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 text-sm">
+                                Browse Designs →
+                            </Link>
+                        </div>
+
+                        <div className="trust-row flex items-center gap-6 mt-10 pt-10 border-t border-gray-100">
+                            <div className="text-center">
+                                <p className="text-2xl font-bold text-gray-900 leading-none">24h</p>
+                                <p className="text-xs text-gray-400 mt-1">Turnaround</p>
+                            </div>
+                            <div className="w-px h-10 bg-gray-200"></div>
+                            <div className="text-center">
+                                <p className="text-2xl font-bold text-gray-900 leading-none">500+</p>
+                                <p className="text-xs text-gray-400 mt-1">Designs</p>
+                            </div>
+                            <div className="w-px h-10 bg-gray-200"></div>
+                            <div className="text-center">
+                                <p className="text-2xl font-bold text-gray-900 leading-none">PLA/ABS</p>
+                                <p className="text-xs text-gray-400 mt-1">Materials</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="quote" className="quote-widget bg-white rounded-2xl shadow-2xl shadow-gray-200/70 p-8 border border-gray-100 relative">
+                        <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient -to-r from-blue-500 to-indigo-500 rounded-full -translate-y-0.5"></div>
+
+                        <div className="widget-header flex items-center justify-between mb-7">
+                            <h2 className="text-xl font-bold text-gray-900 tracking-tight">Instant Quote</h2>
+                            <span className="badge bg-emerald-50 text-emerald-700 border border-emerald-100 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                                Online 24/7
+                            </span>
+                        </div>
+
+                        <form action="/quote" method="POST" enctype="multipart/form-data" className="space-y-5">
+                            <div className="upload-area bg-blue-50/60 border-2 border-dashed border-blue-200 rounded-xl p-5 hover:bg-blue-50 hover:border-blue-300 transition-colors duration-200 group">
+                                <label htmlFor="stl-file" className="block text-sm text-gray-700 font-semibold mb-2">Upload 3D Files</label>
+                                <input type="file" id="stl-file" name="file" accept=".stl, .obj, .step" required className="w-full text-sm text-gray-600 file:mr-3 file:py-1.5 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white file:text-xs file:font-semibold file:cursor-pointer hover:file:bg-blue-700 file:transition-colors"/>
+                                <small className="block text-gray-400 text-xs mt-2">Accepted formats: STL, OBJ, STEP</small>
+                            </div>
+
+                            <div className="quick-specs-grid grid grid-cols-2 gap-4">
+                                <div className="spec-group">
+                                    <label htmlFor="material" className="block text-xs text-gray-500 font-semibold mb-1.5 uppercase tracking-wider">Material</label>
+                                    <select id="material" name="material" className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 bg-white text-sm text-gray-800 transition-colors">
+                                        <option value="pla">PLA (Standard)</option>
+                                        <option value="abs">ABS (Durable)</option>
+                                        <option value="petg">PETG (Flexible)</option>
+                                    </select>
+                                </div>
+
+                                <div className="spec-group">
+                                    <label htmlFor="quality" className="block text-xs text-gray-500 font-semibold mb-1.5 uppercase tracking-wider">Quality</label>
+                                    <select id="quality" name="quality" className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 bg-white text-sm text-gray-800 transition-colors">
+                                        <option value="0.2">Standard (0.2mm)</option>
+                                        <option value="0.1">High Detail (0.1mm)</option>
+                                        <option value="0.3">Draft (0.3mm)</option>
+                                    </select>
+                                </div>
+
+                                <div className="spec-group">
+                                    <label htmlFor="infill" className="block text-xs text-gray-500 font-semibold mb-1.5 uppercase tracking-wider">Infill</label>
+                                    <select id="infill" name="infill" className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 bg-white text-sm text-gray-800 transition-colors">
+                                        <option value="20">20% Standard</option>
+                                        <option value="100">100% Solid</option>
+                                        <option value="10">10% Hollow</option>
+                                    </select>
+                                </div>
+
+                                <div className="spec-group">
+                                    <label htmlFor="quantity" className="block text-xs text-gray-500 font-semibold mb-1.5 uppercase tracking-wider">Quantity</label>
+                                    <input type="number" id="quantity" name="quantity" value="1" min="1" className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 text-sm text-gray-800 transition-colors"/>
+                                </div>
+                            </div>
+
+                            <div className="widget-footer pt-1">
+                                <button type="submit" className="w-full bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 transition-all duration-200 font-semibold py-3.5 px-6 rounded-xl shadow-md shadow-blue-200 text-sm hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-200">
+                                    Calculate Estimate →
+                                </button>
+                                <p className="text-center text-xs text-gray-400 mt-3">No account needed · Instant results</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="capabilities" className="stats-banner bg-gray-900 py-14">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-700/60 text-center">
+                        <div className="stat-item py-6 md:py-0 md:px-12">
+                            <span className="stat-number block text-5xl font-extrabold text-white mb-2 tracking-tight">24h</span>
+                            <span className="stat-label text-sm text-gray-400 font-medium tracking-wide uppercase">Avg. Turnaround Time</span>
+                        </div>
+                        <div className="stat-item py-6 md:py-0 md:px-12">
+                            <span className="stat-number block text-5xl font-extrabold text-white mb-2 tracking-tight">500+</span>
+                            <span className="stat-label text-sm text-gray-400 font-medium tracking-wide uppercase">Approved Designs</span>
+                        </div>
+                        <div className="stat-item py-6 md:py-0 md:px-12">
+                            <span className="stat-number block text-5xl font-extrabold text-white mb-2 tracking-tight">100%</span>
+                            <span className="stat-label text-sm text-gray-400 font-medium tracking-wide uppercase">Automated Design Check</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services-grid" className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="section-header text-center mb-16 max-w-xl mx-auto">
+                        <p className="text-xs font-bold text-blue-600 tracking-widest uppercase mb-3">What We Offer</p>
+                        <h2 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">Our Services</h2>
+                        <p className="text-gray-500 leading-relaxed">Comprehensive fabrication solutions for every stage of your project — from concept to completed part.</p>
+                    </div>
+
+                    <div className="card-grid grid md:grid-cols-3 gap-6">
+                        
+                        <article className="service-card group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:shadow-gray-100 hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
+                            <div className="card-icon w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-600 text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                                ⬡
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-900 mb-3 tracking-tight">3D Printing Service</h3>
+                            <p className="text-gray-500 mb-6 leading-relaxed text-sm">Upload your STL files and get professional prints with our automated slicing and quality-checked post-processing.</p>
+                            <NavLink to="/upload" className="text-blue-600 font-semibold hover:text-blue-700 transition-colors text-sm inline-flex items-center gap-1">Start Printing <span>→</span></NavLink>
+                        </article>
+
+                        <article className="service-card group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:shadow-gray-100 hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
+                            <div className="card-icon w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-6 text-indigo-600 text-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                                ◈
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-900 mb-3 tracking-tight">Design Database</h3>
+                            <p className="text-gray-500 mb-6 leading-relaxed text-sm">Don't have a design? Browse our curated library of verified, printable 3D models sourced and approved for the lab.</p>
+                            <Link to="/database" className="text-blue-600 font-semibold hover:text-blue-700 transition-colors text-sm inline-flex items-center gap-1">Browse Library <span>→</span></Link>
+                        </article>
+
+                        <article className="service-card group bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:shadow-gray-100 hover:border-blue-200 transition-all duration-300 hover:-translate-y-1">
+                            <div className="card-icon w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-6 text-amber-600 text-xl group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                                ✦
+                            </div>
+                            <h3 className="text-lg font-bold text-gray-900 mb-3 tracking-tight">Request Design Help</h3>
+                            <p className="text-gray-500 mb-6 leading-relaxed text-sm">Need a custom part? Submit a structured request to our pre-approved designers — include sketches, dimensions, and references.</p>
+                            <Link to="/request-designer" className="text-blue-600 font-semibold hover:text-blue-700 transition-colors text-sm inline-flex items-center gap-1">Hire a Designer <span>→</span></Link>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="process-flow" className="py-24 bg-gray-50 border-t border-gray-100">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <p className="text-xs font-bold text-blue-600 tracking-widest uppercase mb-3">Simple Process</p>
+                        <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">How It Works</h2>
+                    </div>
+
+                    <ol className="steps-container grid md:grid-cols-4 gap-5">
+                        <li className="step bg-white rounded-2xl p-8 border border-gray-200 shadow-sm group hover:shadow-md hover:border-gray-300 transition-all duration-200">
+                            <span className="step-num block text-6xl font-extrabold text-blue-100 mb-4 leading-none tracking-tighter group-hover:text-blue-200 transition-colors">01</span>
+                            <strong className="block text-base font-bold text-gray-900 mb-2">Upload or Select</strong>
+                            <p className="text-gray-500 text-sm leading-relaxed">Upload your own file or choose a ready-made design from our library.</p>
+                        </li>
+                        <li className="step bg-white rounded-2xl p-8 border border-gray-200 shadow-sm group hover:shadow-md hover:border-gray-300 transition-all duration-200">
+                            <span className="step-num block text-6xl font-extrabold text-blue-100 mb-4 leading-none tracking-tighter group-hover:text-blue-200 transition-colors">02</span>
+                            <strong className="block text-base font-bold text-gray-900 mb-2">Review &amp; Quote</strong>
+                            <p className="text-gray-500 text-sm leading-relaxed">Get instant pricing. Lab staff review your submission for printability.</p>
+                        </li>
+                        <li className="step bg-white rounded-2xl p-8 border border-gray-200 shadow-sm group hover:shadow-md hover:border-gray-300 transition-all duration-200">
+                            <span className="step-num block text-6xl font-extrabold text-blue-100 mb-4 leading-none tracking-tighter group-hover:text-blue-200 transition-colors">03</span>
+                            <strong className="block text-base font-bold text-gray-900 mb-2">Fabrication</strong>
+                            <p className="text-gray-500 text-sm leading-relaxed">We print your object using quality-controlled materials and settings.</p>
+                        </li>
+                        <li className="step bg-white rounded-2xl p-8 border border-gray-200 shadow-sm group hover:shadow-md hover:border-gray-300 transition-all duration-200">
+                            <span className="step-num block text-6xl font-extrabold text-blue-100 mb-4 leading-none tracking-tighter group-hover:text-blue-200 transition-colors">04</span>
+                            <strong className="block text-base font-bold text-gray-900 mb-2">Track &amp; Pickup</strong>
+                            <p className="text-gray-500 text-sm leading-relaxed">Monitor your status live and collect your finished part at the USTP lab.</p>
+                        </li>
+                    </ol>
+
+                    <div className="text-center mt-14">
+                        <Link to="#quote" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-10 rounded-xl shadow-md shadow-blue-200 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg text-sm">
+                            Get Started Now →
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <Footer />
+        </>
+    )
+}

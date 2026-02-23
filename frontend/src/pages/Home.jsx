@@ -1,9 +1,7 @@
 import {Link, NavLink} from "react-router-dom";
-import Footer from "../components/layout/Footer";
 
 export default function Home() {
     return (
-        <>
         <main className="bg-white">
             <section id="hero" className="hero-section relative overflow-hidden pt-20 pb-24 md:pt-28 md:pb-32">
                 <div className="hero-bg-grid absolute inset-0 -z-10"></div>
@@ -65,7 +63,7 @@ export default function Home() {
                             </span>
                         </div>
 
-                        <form action="/quote" method="POST" enctype="multipart/form-data" className="space-y-5">
+                        <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
                             <div className="upload-area bg-blue-50/60 border-2 border-dashed border-blue-200 rounded-xl p-5 hover:bg-blue-50 hover:border-blue-300 transition-colors duration-200 group">
                                 <label htmlFor="stl-file" className="block text-sm text-gray-700 font-semibold mb-2">Upload 3D Files</label>
                                 <input type="file" id="stl-file" name="file" accept=".stl, .obj, .step" required className="w-full text-sm text-gray-600 file:mr-3 file:py-1.5 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white file:text-xs file:font-semibold file:cursor-pointer hover:file:bg-blue-700 file:transition-colors"/>
@@ -102,7 +100,7 @@ export default function Home() {
 
                                 <div className="spec-group">
                                     <label htmlFor="quantity" className="block text-xs text-gray-500 font-semibold mb-1.5 uppercase tracking-wider">Quantity</label>
-                                    <input type="number" id="quantity" name="quantity" value="1" min="1" className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 text-sm text-gray-800 transition-colors"/>
+                                    <input type="number" id="quantity" name="quantity" defaultValue="1" min="1" className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 text-sm text-gray-800 transition-colors"/>
                                 </div>
                             </div>
 
@@ -216,7 +214,5 @@ export default function Home() {
             </section>
 
         </main>
-        <Footer />
-        </>
     )
 }

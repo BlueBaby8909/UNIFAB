@@ -26,7 +26,7 @@ export default function Footer() {
                         <address className="text-gray-500 not-italic text-sm space-y-2">
                             <p>USTP–CDO Fabrication Laboratory</p>
                             <p>Cagayan de Oro City, Philippines</p>
-                            <Link to="mailto:fablab@ustp.edu.ph" className="hover:text-white transition-colors duration-150 inline-block mt-1">fablab@ustp.edu.ph</Link>
+                            <a href="mailto:fablab@ustp.edu.ph" className="hover:text-white transition-colors duration-150 inline-block mt-1">fablab@ustp.edu.ph</a>
                         </address>
                     </div>
                 </div>

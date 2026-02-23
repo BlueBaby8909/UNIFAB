@@ -13,7 +13,7 @@ export default function Header(){
             
             <nav className="hidden md:flex items-center flex-1 ml-12">
                 <ul className="flex gap-8">
-                    <li><NavLink to="/#services-grid" smooth className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200 font-medium tracking-wide">Services</NavLink></li>
+                    <li><NavLink to="/#services-grid" className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200 font-medium tracking-wide">Services</NavLink></li>
                     <li><NavLink to="/database" className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200 font-medium tracking-wide">Design Database</NavLink></li>
                     <li><NavLink to="/request-designer" className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200 font-medium tracking-wide">Request Designer</NavLink></li>
                     <li><NavLink to="/tracking" className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200 font-medium tracking-wide">Track Order</NavLink></li>

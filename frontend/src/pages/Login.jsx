@@ -23,7 +23,7 @@ export default function Login() {
                         <div className="field-group flex flex-col gap-1.5 mb-5">
                             <div className="label-row flex items-center justify-between">
                                 <label htmlFor="password" className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Password</label>
-                                <a href="/forgot-password" className="forgot-password-link text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors">Forgot Password?</a>
+                                <Link to="/forgot-password" className="forgot-password-link text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors">Forgot Password?</Link>
                             </div>
                             <input type="password" id="password" name="password" placeholder="Enter your password" required autoComplete="current-password"
                                 className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-400 transition-colors duration-200"/>

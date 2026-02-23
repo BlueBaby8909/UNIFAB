@@ -2,7 +2,6 @@ import Footer from "../components/layout/Footer";
 
 export default function Upload() {
     return(
-        <div className="eyebrow">
         <main className="flex-grow pt-10 pb-24">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-10">
@@ -224,7 +223,5 @@ export default function Upload() {
                 </div>
             </div>
         </main>
-        <Footer />
-        </div>
     )
 }
